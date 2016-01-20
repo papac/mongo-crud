@@ -1,0 +1,27 @@
+{
+  "name": "mongo-crud",
+  "version": "1.0.0",
+  "description": "Exemple for mongodb crud operation",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test/index.js"
+  },
+	"dependencies": {
+		"mongodb": "^2.1.4"
+	},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/papac/mongo-crud.git"
+  },
+  "keywords": [
+    "mongo",
+    "crud",
+    "mongodb"
+  ],
+  "author": "Franck Dakia",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/papac/mongo-crud/issues"
+  },
+  "homepage": "https://github.com/papac/mongo-crud#readme"
+}
