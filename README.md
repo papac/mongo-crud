@@ -119,7 +119,7 @@ var mongo = require("mongodb").MongoClient;
 var query = require("mongo-simple-curd");
 var assert = require("assert");
 
-mongo.connect("mongodb://localhost/test", function () {
+mongo.connect("mongodb://localhost/test", function (err, db) {
 
 	assert.equal(err, null);
 	
@@ -148,7 +148,7 @@ var mongo = require("mongodb").MongoClient;
 var query = require("mongo-simple-curd");
 var assert = require("assert");
 
-mongo.connect("mongodb://localhost/test", function () {
+mongo.connect("mongodb://localhost/test", function (err, db) {
 	
 	assert.equal(err, null);
 	
