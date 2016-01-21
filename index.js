@@ -8,7 +8,7 @@ function Query (collectionName) {
 }
 
 // Find query
-Query.prototype.read = function (db, info, cb) {
+Query.prototype.find = function (db, info, cb) {
 	
 	if (typeof info === "function") {
 		cb = info;
