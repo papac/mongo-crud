@@ -1,14 +1,14 @@
 {
   "name": "mongo-simple-crud",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Exemple for mongodb crud operation",
   "main": "index.js",
   "scripts": {
     "test": "node test/index.js"
   },
-	"dependencies": {
-		"mongodb": "^2.1.4"
-	},
+  "dependencies": {
+    "mongodb": "^2.1.4"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/papac/mongo-crud.git"
