@@ -1,6 +1,7 @@
 "use strict";
 
 var assert = require("assert");
+var ObjectID = require("mongodb").ObjectID;
 
 // Query Class contructor
 function Query (collectionName) {
@@ -49,6 +50,11 @@ Query.prototype.insert = function (db, data, cb) {
 		data = [data];
 	}
 
+	data = data.map(function (key, item) {
+		item._id = new ObjectID();
+		return item;
+	});
+
 	db.collection(this.collectionName).insertMany(data, function (err, r) {
 		
 		assert.equal(err, null);
@@ -61,9 +67,9 @@ Query.prototype.insert = function (db, data, cb) {
 };
 
 //Delete query
-Query.prototype.deleteOne = function (db, where, cb) {
+Query.prototype.deleteOne = function (db, data, cb) {
 	
-	db.collection(this.collectionName).deleteOne(where, function (err, r) {
+	db.collection(this.collectionName).deleteOne(data, function (err, r) {
 		
 		assert.equal(err, null);
 		cb(r);
@@ -74,9 +80,9 @@ Query.prototype.deleteOne = function (db, where, cb) {
 
 };
 
-Query.prototype.deleteMany = function(db, where, cb) {
+Query.prototype.deleteMany = function(db, data, cb) {
 		
-	db.collection(this.collectionName).deleteMany(where, function (err, r) {
+	db.collection(this.collectionName).deleteMany(data, function (err, r) {
 			
 		assert.equal(err, null);
 		cb(r);
@@ -88,6 +94,14 @@ Query.prototype.deleteMany = function(db, where, cb) {
 // Update query
 Query.prototype.updateOne = function (db, data, cb) {
 	
+	if (Array.isArray(data) {
+		if (data.length < 2 && data.length > 2) {
+			throw new Error("array size must be 2");
+		}
+	} else {
+			throw new Error("insert data must be array");
+	}
+
 	db.collection(this.collectionName).updateOne(data[0], {$set: data[1]}, function (err, r) {
 		
 		assert.equal(err, null);
