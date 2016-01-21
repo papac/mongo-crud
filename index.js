@@ -1,7 +1,6 @@
 "use strict";
 
 var assert = require("assert");
-var ObjectID = require("mongodb").ObjectID;
 
 // Query Class contructor
 function Query (collectionName) {
@@ -114,7 +113,14 @@ Query.prototype.updateOne = function (db, data, cb) {
 };
 
 Query.prototype.updateMany = function (db, data, cb) {
-	
+		
+	if (Array.isArray(data) {
+		if (data.length < 2 && data.length > 2) {
+			throw new Error("array size must be 2");
+		}
+	} else {
+			throw new Error("insert data must be array");
+	}
 
 	db.collection(this.collectionName).updateMany(data[0], {$set: data[1]}, function (err, r) {
 		
