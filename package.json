@@ -1,6 +1,6 @@
 {
   "name": "mongo-simple-crud",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "description": "Exemple for mongodb crud operation",
   "main": "index.js",
   "scripts": {
