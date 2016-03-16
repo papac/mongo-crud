@@ -93,7 +93,7 @@ Query.prototype.deleteMany = function(db, data, cb) {
 // Update query
 Query.prototype.updateOne = function (db, data, cb) {
 	
-	if (Array.isArray(data) {
+	if (Array.isArray(data)) {
 		if (data.length < 2 && data.length > 2) {
 			throw new Error("array size must be 2");
 		}
@@ -114,7 +114,7 @@ Query.prototype.updateOne = function (db, data, cb) {
 
 Query.prototype.updateMany = function (db, data, cb) {
 		
-	if (Array.isArray(data) {
+	if (Array.isArray(data)) {
 		if (data.length < 2 && data.length > 2) {
 			throw new Error("array size must be 2");
 		}
